@@ -12,12 +12,12 @@ namespace: opentext_carbonite.operations
 operation:
   name: authenticate
   inputs:
-    - server_ip
-    - server_port
+    - server_ip: "${get_sp('carbonite.server_ip')}"
+    - server_port: "${get_sp('carbonite.server_port')}"
     - client_id
     - client_secret:
         sensitive: true
-    - grant_type
+    - grant_type: password
     - username
     - password:
         sensitive: true

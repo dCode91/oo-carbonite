@@ -7,12 +7,12 @@
 #! @output exception: The exception"s stack trace if operation failed. Empty otherwise.
 #!!#
 ########################################################################################################################
-namespace: opentext_carbonite.operations
+namespace: opentext_carbonite.operations.jobs
 operation:
   name: start_job
   inputs:
-    - server_ip
-    - server_port: '6326'
+    - server_ip: "${get_sp('carbonite.server_ip')}"
+    - server_port: "${get_sp('carbonite.server_port')}"
     - access_token:
         sensitive: true
     - job_id
